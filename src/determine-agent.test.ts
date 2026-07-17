@@ -165,7 +165,7 @@ describe('determineAgent', () => {
     });
   });
 
-  describe('gemini detection', () => {
+  describe('gemini_cli detection', () => {
     describe('GEMINI_CLI not set', () => {
       it('returns no agent', async () => {
         const result = await determineAgent();
@@ -178,7 +178,7 @@ describe('determineAgent', () => {
         vi.stubEnv('GEMINI_CLI', '1');
       });
 
-      it('detects gemini', async () => {
+      it('detects gemini_cli', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -188,7 +188,7 @@ describe('determineAgent', () => {
     });
   });
 
-  describe('codex detection', () => {
+  describe('codex_cli detection', () => {
     describe('CODEX_SANDBOX not set', () => {
       it('returns no agent', async () => {
         const result = await determineAgent();
@@ -201,7 +201,7 @@ describe('determineAgent', () => {
         vi.stubEnv('CODEX_SANDBOX', 'seatbelt');
       });
 
-      it('detects codex', async () => {
+      it('detects codex_cli', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -215,7 +215,7 @@ describe('determineAgent', () => {
         vi.stubEnv('CODEX_CI', '1');
       });
 
-      it('detects codex', async () => {
+      it('detects codex_cli', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -229,7 +229,7 @@ describe('determineAgent', () => {
         vi.stubEnv('CODEX_THREAD_ID', 'thread-123');
       });
 
-      it('detects codex', async () => {
+      it('detects codex_cli', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -308,7 +308,7 @@ describe('determineAgent', () => {
     });
   });
 
-  describe('opencode detection', () => {
+  describe('open_code detection', () => {
     describe('OPENCODE_CLIENT not set', () => {
       it('returns no agent', async () => {
         const result = await determineAgent();
@@ -318,10 +318,10 @@ describe('determineAgent', () => {
 
     describe('OPENCODE_CLIENT set', () => {
       beforeEach(() => {
-        vi.stubEnv('OPENCODE_CLIENT', 'opencode');
+        vi.stubEnv('OPENCODE_CLIENT', 'open_code');
       });
 
-      it('detects opencode', async () => {
+      it('detects open_code', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -335,7 +335,7 @@ describe('determineAgent', () => {
         vi.stubEnv('OPENCODE', '1');
       });
 
-      it('detects opencode', async () => {
+      it('detects open_code', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -465,7 +465,7 @@ describe('determineAgent', () => {
     });
   });
 
-  describe('claude detection', () => {
+  describe('claude_code detection', () => {
     describe('CLAUDE_CODE not set', () => {
       it('returns no agent', async () => {
         const result = await determineAgent();
@@ -478,7 +478,7 @@ describe('determineAgent', () => {
         vi.stubEnv('CLAUDE_CODE', '1');
       });
 
-      it('detects claude', async () => {
+      it('detects claude_code', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -492,7 +492,7 @@ describe('determineAgent', () => {
         vi.stubEnv('CLAUDECODE', '1');
       });
 
-      it('detects claude', async () => {
+      it('detects claude_code', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -508,7 +508,7 @@ describe('determineAgent', () => {
         vi.stubEnv('CLAUDECODE', '1');
       });
 
-      it('detects claude', async () => {
+      it('detects claude_code', async () => {
         const result = await determineAgent();
         expect(result).toEqual({
           isAgent: true,
@@ -618,7 +618,7 @@ describe('determineAgent', () => {
       vi.stubEnv('CODEX_SANDBOX', 'seatbelt');
       vi.stubEnv('ANTIGRAVITY_AGENT', '1');
       vi.stubEnv('AUGMENT_AGENT', '1');
-      vi.stubEnv('OPENCODE_CLIENT', 'opencode');
+      vi.stubEnv('OPENCODE_CLIENT', 'open_code');
       vi.stubEnv('CLAUDE_CODE', '1');
       vi.stubEnv('REPL_ID', '1');
       vi.stubEnv('COPILOT_MODEL', 'gpt-5');
@@ -644,7 +644,7 @@ describe('determineAgent', () => {
       vi.stubEnv('CODEX_SANDBOX', 'seatbelt');
       vi.stubEnv('ANTIGRAVITY_AGENT', '1');
       vi.stubEnv('AUGMENT_AGENT', '1');
-      vi.stubEnv('OPENCODE_CLIENT', 'opencode');
+      vi.stubEnv('OPENCODE_CLIENT', 'open_code');
       vi.stubEnv('CLAUDE_CODE', '1');
       vi.stubEnv('REPL_ID', '1');
       vi.stubEnv('COPILOT_MODEL', 'gpt-5');
@@ -669,7 +669,7 @@ describe('determineAgent', () => {
       vi.stubEnv('CODEX_SANDBOX', 'seatbelt');
       vi.stubEnv('ANTIGRAVITY_AGENT', '1');
       vi.stubEnv('AUGMENT_AGENT', '1');
-      vi.stubEnv('OPENCODE_CLIENT', 'opencode');
+      vi.stubEnv('OPENCODE_CLIENT', 'open_code');
       vi.stubEnv('CLAUDE_CODE', '1');
       vi.stubEnv('REPL_ID', '1');
       vi.stubEnv('COPILOT_MODEL', 'gpt-5');
